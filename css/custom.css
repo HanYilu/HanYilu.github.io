@@ -1,0 +1,1168 @@
+/*---------------
+    Global
+-----------------*/
+/* fontes IE 4–8 */
+
+@font-face {
+    font-family: AmsterFina;
+    src: url("../fonts/Amster-FinaWeb.eot");
+}
+
+@font-face {
+    font-family: AmsterNegra;
+    src: url("../fonts/Amster-NegraWeb.eot");
+}
+/* fontes para WOFF-capable browsers */
+
+@font-face {
+    font-family: AmsterFina;
+    src: url("../fonts/Amster-FinaWeb.woff") format("woff");
+}
+
+@font-face {
+    font-family: AmsterNegra;
+    src: url("../fonts/Amster-NegraWeb.woff") format("woff");
+}
+
+*:focus {
+    outline: none !important;
+}
+
+*:hover {
+    -webkit-transition: ease-in-out all 0.2s;
+    -o-transition: ease-in-out all 0.2s;
+    transition: ease-in-out all 0.2s;
+    text-decoration: none !important;
+}
+
+a {
+    color: #EB613B;
+}
+
+a:hover,
+a:focus {
+    color: #FF7E00;
+    text-decoration: none;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+body {
+    font-family: 'AmsterFina', sans-serif;
+    font-size: 16px;
+    background: #F7EADC;
+    color: #4D3B36;
+}
+
+body::after {
+    z-index: -1;
+}
+
+body.open::after {
+    z-index: 10;
+}
+
+section {
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
+p {
+    line-height: 1.54;
+}
+
+.divisoria50 {
+    height: 2px;
+    width: 120px;
+    margin: 50px auto 0;
+    background: #EB613B;
+    clear: both;
+}
+
+.divisoria-circulo {
+    height: 10px;
+    width: 10px;
+    margin: 0 auto;
+    background: #4D3B36;
+    clear: both;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid #E6B0A1;
+}
+/*---------------
+    Burger
+-----------------*/
+
+.burger {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(247, 234, 220, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    /* FF3.6+ */
+    
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(247, 234, 220, 1)), color-stop(70%, rgba(255, 255, 255, 0)));
+    /* Chrome,Safari4+ */
+    
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(247, 234, 220, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    /* Chrome10+,Safari5.1+ */
+    
+    background: -o-radial-gradient(center, ellipse cover, rgba(247, 234, 220, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    /* Opera 12+ */
+    
+    background: -ms-radial-gradient(center, ellipse cover, rgba(247, 234, 220, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    /* IE10+ */
+    
+    background: radial-gradient(ellipse at center, rgba(247, 234, 220, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    /* W3C */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f7eadc', endColorstr='#007db9e8', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    
+    border: none;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    height: 83px;
+    width: 87px;
+    ;
+}
+
+.social {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 13;
+}
+
+.social.open {
+    z-index: 5;
+}
+
+.social a:first-child {
+    margin-right: 10px;
+}
+
+.social img {
+    width: 23px;
+    height: 23px;
+}
+
+.burger-contain.open .burger {
+    border: none;
+    background: transparent;
+}
+
+.burger-contain.open .burger:hover {
+    border: none;
+}
+
+.burger-contain:hover:not(.open) .burger {
+    background: transparent;
+}
+
+.bun {
+    background: #EB613B;
+}
+
+.bun-top {
+    height: 3px;
+    top: 0;
+    width: 27px;
+}
+
+.bun-mid {
+    height: 3px;
+    top: 7px;
+    width: 27px;
+}
+
+.bun-bottom {
+    height: 3px;
+    top: 14px;
+    width: 27px;
+}
+
+.burger-contain.open:hover .bun-top,
+.burger-contain.open:hover .bun-bottom {
+    background: #EB613B;
+}
+
+.burger-contain.open .bun-bottom {
+    top: 3px;
+}
+
+.burger-nav {
+    position: fixed;
+    height: 80px;
+}
+
+.burger-nav ul {
+    padding-left: 0;
+    height: 0;
+    width: 0;
+}
+
+.burger-nav li {
+    -webkit-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    transform: translateX(-300px);
+}
+
+.burger-nav li:first-child {
+    padding-top: 80px;
+}
+
+.burger-nav li:not(.open) {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: initial;
+}
+
+.burger-nav.open li {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+}
+
+.burger-link {
+    margin-left: 34px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+}
+
+.burger-link.active,
+.burger-link:hover {
+    border-left-width: 1px;
+    border-left-color: #EB613B;
+    color: #EB613B;
+    text-decoration: none;
+}
+/*---------------
+    Header
+-----------------*/
+
+nav {
+    text-align: center;
+    padding: 30px;
+}
+
+.marca {
+    height: 120px;
+    width: 320px;
+    background: url(../img/hanyilu.jpg) no-repeat;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.nav-data {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-data::before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 1px;
+    background: #E6B0A1;
+    margin-top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.nav-data::after {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 1px;
+    background: #E6B0A1;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.nav-data h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding: 30px;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-align: center;
+}
+
+.descricao-evento {
+    margin-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    float: none;
+    font-size: 1.67rem;
+    line-height: 1.54;
+}
+
+.retirada {
+  width: 283px;
+  margin: 0 auto;
+}
+
+.retirada h2 {
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 800;
+  margin-top: 50px;
+  letter-spacing: 0.03em;
+  padding: 15px 10px;
+  border: 2px solid;
+}
+/*---------------
+    palestras
+-----------------*/
+
+#palestras {
+    float: left;
+    width: 100%;
+    margin: -50px auto 0;
+}
+
+.titulo-sessao {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.1rem;
+    color: #EB613B;
+    text-transform: uppercase;
+    margin: 50px auto 30px;
+    letter-spacing: 0.2em;
+}
+
+#palestras .row::after {
+    position: relative;
+    content: "";
+    height: 50px;
+    width: 1px;
+    background: #E6B0A1;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+#palestras .row:last-child .curriculum p {
+    margin: 5px 0 50px;
+}
+
+#palestras .row:last-child::after {
+    height: 0;
+    width: 0;
+}
+
+#palestras .row:nth-child(even) {
+    text-align: left;
+}
+
+#palestras .row:nth-child(odd) {
+    text-align: right;
+}
+
+#palestras .row:nth-child(odd) .dropdown p {
+    text-align: right;
+}
+
+.foto {
+    margin: 0 auto;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.foto img {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 60px;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.card + a {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button.mini-titulo {
+    background: transparent;
+    border: 1px solid;
+    margin-bottom: 5px;
+    padding: 10px 13px 10px 15px;
+}
+
+button.mini-titulo:hover {
+    text-decoration: none;
+    color: #EB613B;
+    background: #FFE5DD;
+}
+
+#palestras .dropdown-menu {
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.card + a.mini-titulo.cta {
+    font-size: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-width: 2px;
+}
+
+#palestras .row {
+    margin-top: 30px;
+}
+
+#palestras .row:nth-child(even) .card {
+    padding-left: 0;
+}
+
+#palestras .row:nth-child(even) .card * {
+    float: left;
+    clear: left;
+}
+
+#palestras .row:nth-child(even) .card p a {
+    float: none;
+}
+
+#palestras .row:nth-child(odd) .card {
+    padding-right: 0;
+}
+
+#palestras .row:nth-child(odd) .card * {
+    float: right;
+    clear: right;
+}
+
+#palestras .row:nth-child(odd) .card p a {
+    float: none;
+}
+
+.horario,
+.mini-titulo {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    color: #EB613B;
+}
+
+.autor {
+    font-size: 2.7rem;
+    margin-bottom: 3px;
+    font-family: 'AmsterNegra', sans-serif;
+}
+
+.autor + h5 {
+    letter-spacing: .07em;
+    font-size: 1.5rem;
+    color: #4D3B36;
+    margin: 0 0 20px;
+}
+
+.mini-titulo {
+    font-size: 11px;
+    letter-spacing: .1em;
+    margin-bottom: 0;
+}
+
+a.mini-titulo {
+    border: 1px solid;
+    margin-bottom: 5px;
+    padding: 10px 13px 10px 15px;
+}
+
+a.mini-titulo:hover {
+    text-decoration: none;
+    color: #EB613B;
+    background: #FFE5DD;
+}
+
+a.mini-titulo:focus {
+    text-decoration: none;
+    color: #EB613B;
+}
+
+a.mini-titulo .fa {
+    float: right !important;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+button.mini-titulo .fa {
+    float: right !important;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.tema {
+    margin: 5px 0 20px;
+    font-size: 23px;
+    line-height: 1.2;
+    max-width: 400px;
+}
+
+.horario {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.detalhes p {
+    font-size: 1.7rem;
+    color: #4D3B36;
+    margin: 5px 0 0;
+    max-width: 520px;
+}
+
+.detalhes ul {
+    font-size: 1.7rem;
+    padding-left: 0;
+}
+/* 
+#palestras .row:last-child .detalhes p {
+    color: #4D3B36;
+    margin: 5px 0 50px;
+    max-width: 520px;
+} */
+/*---------------
+    Debate
+-----------------*/
+
+#palestras .row.debate {
+    border: 1px solid #E6B0A1;
+    margin: 70px 0 50px;
+}
+
+.row.debate .horario {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -40px auto 0;
+    text-align: center;
+}
+
+.debate .header .mini-titulo {
+    margin-top: 50px;
+}
+
+.debate .header {
+    margin-bottom: 60px;
+}
+
+.debate .header h2:first-child {
+    position: absolute;
+    width: 95px;
+    left: 0;
+    right: 0;
+    font-family: 'Open Sans';
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #4D3B36;
+    text-align: center;
+    background: #f7eadc;
+    margin: -9px auto 0;
+    padding: 0 7px;
+}
+
+.row.debate .mini-titulo,
+.row.debate .tema {
+    text-align: center;
+    max-width: inherit;
+}
+
+.row.debate .tema {
+    margin-bottom: 0;
+    margin-top: 60px;
+    ;
+}
+
+.debate-left,
+.debate-right {
+    padding-top: 60px;
+}
+
+.debate-left {
+    padding-right: 0;
+}
+
+.debate-left * {
+    float: right;
+    clear: both;
+}
+
+.debate-divisoria {
+    height: 300px;
+}
+
+.debate-divisoria::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: #E6B0A1;
+}
+/* .debate-divisoria::before {
+    position: absolute;
+    content: "";
+    height: 150px;
+    width: 150px;
+    border: 2px solid red;
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+} */
+
+.debate-right {
+    padding-left: 0;
+}
+
+.debate-right * {
+    float: left;
+    clear: both;
+}
+
+.debate .detalhes {
+    margin-bottom: 60px;
+}
+
+.debate .detalhes p {
+    max-width: inherit;
+}
+
+.debate-left .detalhes p {
+    text-align: right;
+}
+
+.debate-right .detalhes .dropdown-menu {
+    text-align: left !important;
+}
+
+.mediador {
+    text-align: center;
+}
+
+.mediador .foto {
+    position: relative;
+}
+
+.mediador .autor {
+    font-size: 2.2rem;
+}
+
+.mediador .mini-titulo {
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+/*---------------
+    Workshops
+-----------------*/
+
+#workshops .card {
+    margin-bottom: 20px;
+}
+
+#workshops .card:last-child {
+    margin-bottom: 50px;
+}
+
+#workshops .foto {
+    margin-bottom: 20px;
+}
+
+#workshops .autor {
+    margin-top: 0;
+}
+
+.outras-infos span {
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 1.35rem;
+    letter-spacing: 0.05rem;
+    color: #EB613B;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 8px;
+}
+
+.outras-infos span::after {
+    content: "/";
+    margin-left: 8px;
+}
+
+.outras-infos span:last-child {
+    margin-right: 0;
+}
+
+.outras-infos span:last-child::after {
+    content: "";
+    margin-left: 0;
+}
+
+.valor {
+    font-size: 2.7rem;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.valor::first-letter {
+    font-size: 2.2rem;
+}
+
+.infos-right {
+    border-left: 1px solid #E6B0A1;
+}
+
+.infos-left > * {
+    float: right;
+    clear: both;
+    text-align: right;
+}
+
+.infos-left a.mini-titulo {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-width: 2px;
+}
+
+.infos-right {
+    max-width: 400px;
+}
+
+.infos-right .detalhes .mini-titulo:first-child {
+    margin-top: 8px;
+}
+
+.infos-right .detalhes p {
+    margin-bottom: 20px;
+}
+
+.lista {
+    margin-bottom: 20px;
+}
+
+.lista:last-child {
+    margin-bottom: 0px;
+}
+
+.lista li {
+    list-style-type: none;
+    margin-top: 3px;
+    color: #4D3B36;
+    line-height: 1.54;
+    font-size: 1.7rem;
+}
+
+.lista li:nth-of-type(1) {
+    margin-top: 5px;
+}
+/*---------------
+    Inscrições
+-----------------*/
+
+#inscricoes .card {
+    border: 1px solid #E6B0A1;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 0;
+}
+
+#inscricoes .card.ativo {
+    border-color: #4D3B36;
+}
+
+#inscricoes .card:not(.ativo) * {
+    color: #E6B0A1;
+}
+
+#inscricoes .topo .mini-titulo {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #4D3B36;
+    text-align: center;
+    position: absolute;
+    background: #f7eadc;
+    margin-top: -9px;
+    padding: 0 7px;
+}
+
+#inscricoes .topo .mini-titulo:first-child {
+    top: 0;
+    left: 0;
+    margin-left: 60px;
+}
+
+#inscricoes .topo .mini-titulo:last-child {
+    top: 0;
+    right: 0;
+    margin-right: 60px;
+    text-transform: none;
+}
+/* Lote Encerrado */
+
+#inscricoes .card.inativo .topo .mini-titulo {
+    color: #E6B0A1;
+}
+
+#inscricoes .card.inativo .topo .mini-titulo:last-child {
+    text-transform: uppercase;
+}
+
+#inscricoes .card.inativo .topo h6 {
+    font-size: 1.4rem;
+}
+/* Próximo Lote */
+
+#inscricoes .card.proximo .topo .mini-titulo:first-child {
+    width: 90px;
+    margin: -9px auto 0;
+    left: 0;
+    right: 0;
+    color: #E6B0A1;
+}
+
+#inscricoes .card.proximo .topo .mini-titulo:last-child {
+    display: none;
+}
+
+#inscricoes .valor {
+    margin-top: 5px;
+}
+
+.ingresso {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.inscrito {
+    margin-bottom: 30px;
+}
+
+.inscrito:last-child {
+    margin-bottom: 0;
+}
+
+.inscrito:last-child .valor {
+    margin-bottom: 0;
+}
+
+.inscrito:nth-child(3) h6::after {
+    content: "*";
+    color: #E6B0A1;
+    font-size: 15px;
+    margin-left: 2px;
+}
+
+.card:not(.ativo) .inscrito:nth-child(2) h6::after,
+.card:not(.ativo) .inscrito:nth-child(3) h6::after {
+    color: #E6B0A1;
+}
+
+.aviso {
+    font-size: 1.7rem;
+    line-height: 1.5;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.aviso a {
+    color: #EB613B;
+}
+/*---------------
+    Localização
+-----------------*/
+
+#local {
+    width: 100%;
+}
+
+#local .titulo-sessao {
+    margin-bottom: 50px;
+}
+
+#local iframe {
+    width: 100%;
+    height: 500px;
+    border-top: 1px solid #E6B0A1;
+    border-bottom: 1px solid #E6B0A1;
+    border-right: none;
+    border-left: none;
+}
+/*---------------
+    Contato
+-----------------*/
+
+#contato {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#contato .email {
+    padding: 0 15px 50px;
+}
+
+#contato .email p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+#contato .email a {
+    font-size: 1.6rem;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #EB613B;
+    border: 1px solid;
+    padding: 20px;
+}
+
+#apoio {
+    background: #F0DDC8;
+    margin-top: 0;
+    padding-bottom: 50px;
+}
+
+#apoio .titulo-sessao {
+    margin-top: 0;
+}
+
+#apoio div {
+    width: 200px;
+    margin: 20px auto;
+}
+
+#apoio img {
+    text-align: center;
+}
+/*---------------
+    Media Queries
+-----------------*/
+
+@media (min-width: 1200px) {
+    .descricao-evento {
+        max-width: 530px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1199px) {
+    #inscricoes .topo .mini-titulo:first-child {
+        margin-left: 30px
+    }
+    #inscricoes .topo .mini-titulo:last-child {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .foto {
+        max-height: 100px;
+        max-width: 100px;
+    }
+    .foto img {
+        height: 100px;
+    }
+    #inscricoes .lotes > div {
+        max-width: 350px;
+        clear: both;
+        margin: 50px auto;
+        float: none;
+        top: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .aviso {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .descricao-evento {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+    }
+    #palestras .row::after {
+        height: 1px;
+        width: 70px;
+    }
+    #palestras .row:nth-child(even) .card {
+        padding-left: 55px;
+        /* 40px + 15px = Metade da largura da foto + padding */
+    }
+    #palestras .row:nth-child(odd) .card {
+        padding-right: 55px;
+        /* 40px + 15px = Metade da largura da foto + padding */
+    }
+    #palestras .row .card {
+        float: none;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /*     #palestras .row .card * {
+        float: none !important;
+    } */
+    
+    .foto {
+        max-width: 450px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .foto img {
+        height: 80px;
+        width: 80px;
+    }
+    #palestras .row.debate {
+        margin-top: 70px;
+    }
+    #palestras .detalhes p {
+        margin-bottom: 30px;
+        margin-top: -10px;
+    }
+    .debate-divisoria {
+        display: none;
+    }
+    button.mini-titulo {
+        margin-bottom: 30px;
+    }
+    a.mini-titulo {
+        margin-bottom: 30px;
+    }
+    a.mini-titulo .fa {
+        float: none !important;
+    }
+    button.mini-titulo .fa {
+        float: none !important;
+    }
+    .mediador {
+        border-bottom: 1px solid #E6B0A1;
+        margin-bottom: 25px;
+    }
+    .mediador,
+    .debate-left,
+    .debate-right {
+        float: none;
+    }
+    .mediador *,
+    .debate-left *,
+    .debate-right * {
+        float: none;
+    }
+    .debate-left,
+    .debate-right {
+        text-align: center;
+        padding-top: 0;
+    }
+    .debate-left {
+        padding-right: 15px;
+    }
+    .debate-right {
+        padding-left: 15px;
+    }
+    .debate-left .detalhes p,
+    .debate-right .detalhes p {
+        text-align: left;
+    }
+    #workshops .foto {
+        text-align: center;
+    }
+}
+
+@media (max-width: 659px) {
+    .burger {
+        padding: 20px;
+        width: 67px;
+        height: 63px;
+    }
+    .social {
+        right: 20px;
+        top: 20px;
+    }
+    .burger-contain {
+        left: 15px;
+        top: 15px;
+    }
+    .burger-link {
+        margin-left: 23px;
+    }
+    .nav-data h2 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .marca {
+        height: 120px;
+        width: 120px;
+        background: url(../img/marca-reduzida-diatipo-campinas.svg) no-repeat center center;
+        background-size: 120px 120px;
+        margin: 60px auto 30px;
+        text-align: center;
+        padding-top: 30px;
+    }
+    #workshops .card {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .infos-left,
+    .infos-right {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .infos-left > * {
+        float: left;
+        text-align: left;
+    }
+    .infos-right {
+        border-left: none;
+        margin-top: 20px;
+        max-width: inherit;
+    }
+    .valor {
+        margin-bottom: 0;
+    }
+    #inscricoes .topo .mini-titulo {
+        font-size: 14px;
+    }
+}
