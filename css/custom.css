@@ -332,10 +332,10 @@ nav {
   border: 2px solid;
 }
 /*---------------
-    palestras
+    projects
 -----------------*/
 
-#palestras {
+#projects {
     float: left;
     width: 100%;
     margin: -50px auto 0;
@@ -352,7 +352,7 @@ nav {
     letter-spacing: 0.2em;
 }
 
-#palestras .row::after {
+#projects .row::after {
     position: relative;
     content: "";
     height: 50px;
@@ -363,24 +363,24 @@ nav {
     right: 0;
 }
 
-#palestras .row:last-child .curriculum p {
+#projects .row:last-child .curriculum p {
     margin: 5px 0 50px;
 }
 
-#palestras .row:last-child::after {
+#projects .row:last-child::after {
     height: 0;
     width: 0;
 }
 
-#palestras .row:nth-child(even) {
+#projects .row:nth-child(even) {
     text-align: left;
 }
 
-#palestras .row:nth-child(odd) {
+#projects .row:nth-child(odd) {
     text-align: right;
 }
 
-#palestras .row:nth-child(odd) .dropdown p {
+#projects .row:nth-child(odd) .dropdown p {
     text-align: right;
 }
 
@@ -423,7 +423,7 @@ button.mini-titulo:hover {
     background: #FFE5DD;
 }
 
-#palestras .dropdown-menu {
+#projects .dropdown-menu {
     position: relative;
     background: transparent;
     box-shadow: none;
@@ -437,33 +437,33 @@ button.mini-titulo:hover {
     border-width: 2px;
 }
 
-#palestras .row {
+#projects .row {
     margin-top: 30px;
 }
 
-#palestras .row:nth-child(even) .card {
+#projects .row:nth-child(even) .card {
     padding-left: 0;
 }
 
-#palestras .row:nth-child(even) .card * {
+#projects .row:nth-child(even) .card * {
     float: left;
     clear: left;
 }
 
-#palestras .row:nth-child(even) .card p a {
+#projects .row:nth-child(even) .card p a {
     float: none;
 }
 
-#palestras .row:nth-child(odd) .card {
+#projects .row:nth-child(odd) .card {
     padding-right: 0;
 }
 
-#palestras .row:nth-child(odd) .card * {
+#projects .row:nth-child(odd) .card * {
     float: right;
     clear: right;
 }
 
-#palestras .row:nth-child(odd) .card p a {
+#projects .row:nth-child(odd) .card p a {
     float: none;
 }
 
@@ -548,7 +548,7 @@ button.mini-titulo .fa {
     padding-left: 0;
 }
 /* 
-#palestras .row:last-child .detalhes p {
+#projects .row:last-child .detalhes p {
     color: #4D3B36;
     margin: 5px 0 50px;
     max-width: 520px;
@@ -557,7 +557,7 @@ button.mini-titulo .fa {
     Debate
 -----------------*/
 
-#palestras .row.debate {
+#projects .row.debate {
     border: 1px solid #E6B0A1;
     margin: 70px 0 50px;
 }
@@ -1023,25 +1023,25 @@ button.mini-titulo .fa {
         margin-right: auto;
         max-width: 400px;
     }
-    #palestras .row::after {
+    #projects .row::after {
         height: 1px;
         width: 70px;
     }
-    #palestras .row:nth-child(even) .card {
+    #projects .row:nth-child(even) .card {
         padding-left: 55px;
         /* 40px + 15px = Metade da largura da foto + padding */
     }
-    #palestras .row:nth-child(odd) .card {
+    #projects .row:nth-child(odd) .card {
         padding-right: 55px;
         /* 40px + 15px = Metade da largura da foto + padding */
     }
-    #palestras .row .card {
+    #projects .row .card {
         float: none;
         max-width: 450px;
         margin-left: auto;
         margin-right: auto;
     }
-    /*     #palestras .row .card * {
+    /*     #projects .row .card * {
         float: none !important;
     } */
     
@@ -1054,10 +1054,10 @@ button.mini-titulo .fa {
         height: 80px;
         width: 80px;
     }
-    #palestras .row.debate {
+    #projects .row.debate {
         margin-top: 70px;
     }
-    #palestras .detalhes p {
+    #projects .detalhes p {
         margin-bottom: 30px;
         margin-top: -10px;
     }
