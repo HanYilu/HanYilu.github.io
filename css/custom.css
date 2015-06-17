@@ -50,7 +50,7 @@ ul {
 }
 
 body {
-    font-family: 'AmsterFina', sans-serif;
+    font-family: "Proxima Nova","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     background: #F7EADC;
     color: #4D3B36;
@@ -256,9 +256,9 @@ nav {
 }
 
 .marca {
-    height: 120px;
+    height: 224px;
     width: 320px;
-    background: url(../img/hanyilu.jpg) no-repeat;
+    background: url(../img/hanyil.jpg) no-repeat;
     margin: 30px auto;
     text-align: center;
     padding-top: 30px;
