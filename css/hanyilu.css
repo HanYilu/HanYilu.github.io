@@ -1,11 +1,12 @@
 body {
+    font-family: Corbel, Arial, Helvetica, sans-serif;
     font-size: 16px;
     background: #F7EADC;
     color: #4D3B36;
 }
 
 a {
-    color: #EFBA54;
+    color: #886C36;
 }
 
 a:hover,
@@ -165,11 +166,11 @@ section {
 -----------------*/
 #header {
 	margin-top: 58px;
-	/*text-align: right;*/
 }
 
 #header .myname {
-	margin-bottom: 24px;
+    font-family: Bradley Hand;
+	margin-bottom: 16px;
 }
 
 #header .active {
@@ -187,8 +188,9 @@ section {
 
 #header .list-inline li {
 	margin-right: 22px;
-	padding: 12px 0 0;
-	font-size: 12px;
+	padding: 10px 0 0;
+	font-size: 14px;
+    font-weight: 100;
 }
 
 #header hr {
@@ -199,6 +201,7 @@ section {
 #header h3 {
 	margin: 0;
 	color: #E8DBC2;
+    font-family: Bradley Hand;
 }
 
 /*---------------
@@ -212,3 +215,54 @@ section {
 	color: #FF7E00;
 }
 
+/*---------------
+    Projects
+-----------------*/
+#projects {
+    margin-top: -30px;
+}
+
+#projects .col {
+    margin-top: 50px;
+}
+
+.list-group-item{
+    color: #EB613B;
+    background-color: #F7EADC;
+    text-decoration: none;
+    border-color: #E8DBC2;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+   border-radius: 0; 
+}
+
+a.list-group-time, a.list-group-time:hover {
+    color: #555;
+    padding: 10px 0;
+    display: block;
+    cursor: default;
+    pointer-events:none;
+}
+
+a.list-group-item {
+    color: #886C36;
+}
+
+a.list-group-item:hover, a.list-group-item:focus, a.list-group-item.active:hover, a.list-group-item.active:hover {
+  color: #FF7E00;
+  background-color: #F7EADC;
+  border-color: #E8DBC2;
+}
+
+.list-group .active .list-group-item {
+    color: #EB613B;
+    background-color: #E8DBC2;
+    border-color: #E8DBC2;
+}
+
+.list-group li {
+   border-radius: 0; 
+   border-radius: 0; 
+   list-style-type: none;
+}

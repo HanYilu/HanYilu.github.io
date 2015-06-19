@@ -59,10 +59,77 @@
                 </div>
             </div>
         </section>
+
+        <section id="projects">
+            <div class="row" role="tabpanel">
+                <div class="col-md-3">
+                    <div id="list" >
+                        <ul class="list-group col" role="tablist">
+                            <a href="#" class="list-group-time">2015</a>
+                            <li role="presentation" class="active">
+                                <a href="#cineplex" class="list-group-item" data-toggle="tab">Cinelpex Website</a>
+                            </li>
+                            <a href="#" class="list-group-time">2014</a>
+                            <li role="presentation">
+                                <a href="#iquestion" class="list-group-item" data-toggle="tab">iQuestion Website</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#lex" class="list-group-item" data-toggle="tab">Lex Parser</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#diandianmeng" class="list-group-item" data-toggle="tab">DianDianMeng</a>
+                            </li>
+                            <a href="#" class="list-group-time">2013</a>
+                            <li role="presentation">
+                                <a href="#course" class="list-group-item" data-toggle="tab">Course Center</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9 col tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="cineplex">
+                        2015.01 – 2015.03 &nbsp&nbsp&nbsp&nbsp Personal Developed<br>
+    The website is working for a cinema. The cinema’s VIP can purchase tickets online. Waiters and manager can handle the company's affairs online.<br>
+    Serve as Project Manager and developer. In charge of collecting user’s requirement. Design software architecture, coding and maintaining.<br>
+    Get insight into Struts2+Spring+Hibernate, JSP language, Ajax<br>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="iquestion">
+2014.09 – 2014.10 &nbsp&nbsp&nbsp&nbsp Personal Developed<br>
+    The website is a technical Q&A community.<br> It provides a more convenient way for users to discuss technical problems and search answers of questions.<br>
+    Using Yii Framework, MVC Model, PHP, JS, CSS, Ajax.
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="lex">
+2014.10 &nbsp&nbsp&nbsp&nbsp Personal Developed<br>
+    Implement converting RE to Token. Programmed by Java.
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="diandianmeng">
+2014.03 – 2014.06 &nbsp&nbsp&nbsp&nbsp Architect, Software Engineer<br>
+    An online game software of eliminating squares. There is competition mode, cooperation mode and team-competition mode.<br>
+    Difficulties : Ensure players in a team or cooperation mode have the same screen.<br>
+    C/S architecture + Mysql + Java back-end+ JavaFx front + socket.<br>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="course">
+2013.10 – 2013.12 &nbsp&nbsp&nbsp&nbsp Software Engineer<br>
+    University's educational administration system. Programmed by Java.<br>
+    C/S architecture + Mysql + Java front&back-end.<br>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/jquery.pin.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $("#list").pin({containerSelector: "#projects", minWidth: 640});
+    </script>
 </body>
 </html>
