@@ -46,11 +46,23 @@
       url('../fonts/amaticsc/amaticsc-webfont.svg#amatic_scregular') format('svg');
 }
 
+@font-face {
+ font-family: 'opensans';
+ src: url('../fonts/opensans/opensans-webfont.eot');
+ src: url('../fonts/opensans/opensans-webfont.woff') format('woff'),
+      url('../fonts/opensans/opensans-webfont.ttf') format('truetype'),
+      url('../fonts/opensans/opensans-webfont.svg#open_sansregular') format('svg');
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: opensans, Arial, Helvetica, sans-serif;
     font-size: 16px;
     background: #F7EADC;
     color: #4D3B36;
+}
+
+h1,h2 {
+    font-family: opensans, Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -216,7 +228,7 @@ section {
 	margin-top: 58px;
 }
 
-#header .myname {
+#header .myname>h2 {
     font-family: archistico;
 	margin-bottom: 16px;
 }
@@ -310,7 +322,6 @@ a.list-group-item:hover, a.list-group-item:focus, a.list-group-item.active:hover
 }
 
 .list-group li {
-   border-radius: 0; 
    border-radius: 0; 
    list-style-type: none;
 }
