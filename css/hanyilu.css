@@ -333,3 +333,43 @@ section {
 #projects .title {
     font-size: 28px;
 }
+
+#projects .time {
+    font-size: 16px;
+    text-align: right;
+    margin-top: 18px;
+}
+
+#projects .details {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#projects #piece-pic {
+    height: 500px;
+    width: 281px;
+    float: left;
+}
+
+#projects #piece-pic img {
+    height: 500px;
+}
+
+#projects .carousel-inner, #projects .carousel-indicators{
+    width: 281px;
+    bottom: 0;
+    left: 0;
+    margin-left: 0; 
+}
+
+#projects .carousel-indicators{
+    margin-bottom: 0;
+    padding: 5px 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+#projects #piece .details ul {
+    margin-left: 282px;
+}
+
+
