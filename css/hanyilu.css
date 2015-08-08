@@ -337,7 +337,7 @@ section {
 #projects .time {
     font-size: 16px;
     text-align: right;
-    margin-top: 18px;
+    margin-top: 15px;
 }
 
 #projects .details {
@@ -371,6 +371,22 @@ section {
 
 #projects #piece .details ul {
     margin-left: 282px;
+}
+
+#projects .operation, #projects .tag{
+    margin-top: 5px;
+}
+
+#projects .operation{
+    text-align: right;
+}
+
+
+#projects .operation i{
+    margin-left: 5px;
+}
+#projects .operation a:focus {
+    color: #886C36;
 }
 
 
