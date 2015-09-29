@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>SQL生成</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6" style="border-right:1px solid #555555; padding:30px; margin:20px 0;">
+				<div class="form-horizontal">
+					<div class="form-group">
+		    			<label class="col-md-3 control-label">查询依据</label>
+		    			<div class="col-md-9" id="where">
+		    				<div class="radio">
+								<label>
+									<input type="radio" name="where" value="courier_mobile" checked>
+									骑手手机
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="where" value="courier_name">
+									骑手姓名
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="where" value="merchant_id">
+									餐厅id
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="where" value="merchant_mobile">
+									餐厅电话
+								</label>
+							</div>
+		    			</div>
+		  			</div>
+		  			<div class="form-group">
+		  				<label class="col-md-3 control-label">数据(逗号隔开)</label>
+		  				<div class="col-md-9">
+		  					<textarea id="data" class="form-control" rows="3"></textarea>
+		  				</div>
+		  			</div>
+		  			<div class="form-group">
+		  				<label class="col-md-3 control-label">开始时间</label>
+		  				<div class="input-group date form_datetime col-md-9 datetimepicker" style="padding:0 15px">
+		    				<input class="form-control" size="16" type="text" value="" id="start1" readonly>
+		    				<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+						</div> 
+		            </div>
+		  			<div class="form-group">
+		  				<label class="col-md-3 control-label">结束时间</label>
+		  				<div class="input-group date form_datetime col-md-9 datetimepicker" style="padding:0 15px">
+		    				<input class="form-control" size="16" type="text" value="" id="end1" readonly>
+		    				<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+						</div> 
+		            </div>
+		            <div class="form-group">
+		  				<div class="col-md-offset-3 col-md-9">
+		    				<button class="btn btn-info btn-block" id="create_btn1">生成</button>
+						</div> 
+		            </div>
+		            <div class="form-group">
+		  				<label class="col-md-3 control-label">SQL</label>
+		  				<div class="col-md-9 ">
+		    				<textarea id="result1" class="result form-control" rows="5" readonly></textarea>
+						</div> 
+		            </div>
+		        </div>
+	        </div>
+	        <div class="col-md-6" style="padding:30px; margin:20px 0;">
+	        	<div class="form-horizontal">
+	        		<div class="form-group">
+		    			<label class="col-md-3 control-label">类型</label>
+		    			<div class="col-md-9" id="type">
+		    				<div class="radio">
+								<label>
+									<input type="radio" name="type" value="total" checked>
+									总单
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="type" value="count">
+									计数
+								</label>
+							</div>
+		    			</div>
+		  			</div>
+					<div class="form-group">
+		    			<label class="col-md-3 control-label">开始时间</label>
+		    			<div class="input-group date form_datetime col-md-9 datetimepicker" style="padding:0 15px">
+		    				<input class="form-control" size="16" type="text" value="" id="start2" readonly>
+		    				<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+						</div> 
+		  			</div>
+		  			<div class="form-group">
+		    			<label class="col-md-3 control-label">结束时间</label>
+		    			<div class="input-group date form_datetime col-md-9 datetimepicker" style="padding:0 15px">
+		    				<input class="form-control" size="16" type="text" value="" id="end2" readonly>
+		    				<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+						</div> 
+		  			</div>
+		  			<div class="form-group">
+		  				<div class="col-md-offset-3 col-md-9">
+		    				<button class="btn btn-info btn-block" id="create_btn2">生成</button>
+						</div> 
+		            </div>
+		            <div class="form-group">
+		  				<label class="col-md-3 control-label">SQL</label>
+		  				<div class="col-md-9 ">
+		    				<textarea id="result2" class="result form-control" rows="5" readonly></textarea>
+						</div> 
+		            </div>
+		  		</div>
+	        </div>
+  		</div>
+  	</div>
+
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript">
+		var now = new Date();
+		now.setMinutes(0);
+		$('.datetimepicker').datetimepicker({
+	        todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			forceParse: 0,
+	        minView: 1,
+	        endDate: now,
+	        initialDate: now
+	    });
+
+		$("#create_btn1").click(function(){
+			var sql="select * from tb_shipping_order";
+			var where=" where " + $('#where input[name="where"]:checked ').val();
+			var data = format($('#data').val());
+    		if (data.length == 0) {
+        		alert("数据不能为空");
+        		return;
+        	} else {
+        		where += " in ("+data+")";
+        	}
+        	var start = $('#start1').val();
+        	var end = $('#end1').val();
+        	if (start.length > 0)
+        		where += " and created_at >= '"+start+"'"
+        	if (end.length > 0)
+        		where += " and created_at <= '"+end+"'"
+
+        	sql+=where;
+        	$("#result1").text(sql)
+		});
+
+		$("#create_btn2").click(function(){
+			var sql="select ";
+			var type=$('#type input[name="type"]:checked ').val();
+			var start = $('#start2').val();
+	        var end = $('#end2').val();
+			if (type=="total") {
+				sql+="count(*) from tb_shipping_order";
+				sql+=getWhere(start, end);
+			}
+			else if(type=="count"){
+				sql+="shipping_state, COUNT(*) from tb_shipping_order";
+				sql+=getWhere(start, end);
+				sql+=" GROUP BY shipping_state"
+			}
+	        $("#result2").text(sql)
+
+			function getWhere(_start, _end){
+				var where=""
+				if (_start.length > 0) {
+	        		where += " where created_at >= '"+start+"'";
+	        		if (_end.length > 0)
+	        			where += " and created_at <= '"+end+"'";
+	        	} 
+	        	else if(_end.length > 0)
+	        		where += " where created_at <= '"+end+"'";
+	        	return where;
+			};
+        	
+		});
+
+		$(".result").click(function(){
+			$(this).select();
+		});
+
+		function format(str){
+			var result="";
+			for (var i = 0; i < str.length; i++){
+				if(str.charCodeAt(i)==32 || str.charCodeAt(i)==12288)
+					continue;
+				else if (str.charCodeAt(i)>65280 && str.charCodeAt(i)<65375) 
+					result+= String.fromCharCode(str.charCodeAt(i)-65248);
+				else 
+					result+= String.fromCharCode(str.charCodeAt(i));
+			}
+			return result;
+		} 
+
+
+	</script>
+</body>
+
+</html>
