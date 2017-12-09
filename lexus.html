@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="" />
     <title>创想非凡新豪华艺术论-雷克萨斯年终思想盛宴</title>
 </head>
 <body style="margin:0;">
@@ -35,44 +33,44 @@
     			</div>
     		</a>
     	</div>
-
+<!-- 
     	<div style="position:absolute;left:0%;top:0%;z-index=20;">
     		<div id="share">
     			<img src="lexus/3333.png"  alt="" width="100%"/>
     		</div>
-    	</div>
+    	</div> -->
     </div>
     <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/record.min.js"></script>
-    <script src="js/ya.js"></script>
+<!--     <script src="js/record.min.js"></script>
+    <script src="js/ya.js"></script> -->
     <script type="text/javascript">
         $(function () {
             $(window).resize(function() {
             	var width = $(window).width();
 			  	$('.img-btn').css("width",width*0.24+"px");
 			});
-			ya.onReady(function () {
-			  ya.toast('onready');
-			});
-			$('#share').click(function() {
-				  ya.multiShare({
-				    channel: "weixin",
-				    title: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
-				    desc: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
-				    link: "http://elklab.cn/lexus.html",
-				    imgUrl: 'http://fdfs.xmcdn.com/group17/M06/96/91/wKgJKVexhljjCyxYAAebo16E6Yw923_mobile_large.jpg',
-				    type: "link",
-				    dataUrl: ""
-				  }, function (res) {
-				    // 成功
-				    if (res.ret == 0) {
-				      alert(JSON.stringify('分享到【' + channel + '】成功！'));
-				    } else {
-				      alert(res.msg);
-				    }
-				  });
+// 			ya.onReady(function () {
+// 			  ya.toast('onready');
+// 			});
+// 			$('#share').click(function() {
+// 				  ya.multiShare({
+// 				    channel: "weixin",
+// 				    title: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
+// 				    desc: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
+// 				    link: "http://elklab.cn/lexus.html",
+// 				    imgUrl: 'http://fdfs.xmcdn.com/group17/M06/96/91/wKgJKVexhljjCyxYAAebo16E6Yw923_mobile_large.jpg',
+// 				    type: "link",
+// 				    dataUrl: ""
+// 				  }, function (res) {
+// 				    // 成功
+// 				    if (res.ret == 0) {
+// 				      alert(JSON.stringify('分享到【' + channel + '】成功！'));
+// 				    } else {
+// 				      alert(res.msg);
+// 				    }
+// 				  });
 
-				});
+// 				});
         })
     </script>
 </body>
