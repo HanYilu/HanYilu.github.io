@@ -16,31 +16,63 @@
 		<img src="lexus/1111_6.jpg"  alt="" width="100%"/>
     	<div style="position:absolute;left:62%;bottom:10%;z-index=20;">
     		<a href="http://m.ximalaya.com/33291736/sound/61865415/">
-    			<div id="b1">
+    			<div class="img-btn">
     				<img src="lexus/2222.png"  alt="" width="100%"/>
     			</div>
     		</a>
     	</div>
     	<div style="position:absolute;left:62%;bottom:6.2%;z-index=20;">
     		<a href="http://m.ximalaya.com/33291736/sound/61866284/">
-    			<div id="b2">
+    			<div class="img-btn">
     				<img src="lexus/2222.png"  alt="" width="100%"/>
     			</div>
     		</a>
     	</div>
     	<div style="position:absolute;left:62%;bottom:2.4%;z-index=20;">
     		<a href="http://liveroom.ximalaya.com/xlive/390">
-    			<div id="b3">
+    			<div class="img-btn">
     				<img src="lexus/3333.png"  alt="" width="100%"/>
     			</div>
     		</a>
     	</div>
+
+    	<div style="position:absolute;left:0%;top:0%;z-index=20;">
+    		<div id="share">
+    			<img src="lexus/3333.png"  alt="" width="100%"/>
+    		</div>
+    	</div>
     </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/record.min.js"></script>
     <script type="text/javascript">
-    	var width = document.documentElement.clientWidth;
-    	document.getElementById("b1").style.width=width*0.24+'px';
-    	document.getElementById("b2").style.width=width*0.24+'px';
-    	document.getElementById("b3").style.width=width*0.24+'px';
+        $(function () {
+            $(window).resize(function() {
+            	var width = $(window).width();
+			  	$('.img-btn').css("width",width*0.24+"px");
+			});
+			ya.onReady(function () {
+			  ya.toast('onready');
+			});
+			$('#share').click(function() {
+				  ya.multiShare({
+				    channel: "weixin",
+				    title: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
+				    desc: "创想非凡新豪华艺术论-雷克萨斯年终思想盛宴",
+				    link: "http://elklab.cn/lexus.html",
+				    imgUrl: 'http://fdfs.xmcdn.com/group17/M06/96/91/wKgJKVexhljjCyxYAAebo16E6Yw923_mobile_large.jpg',
+				    type: "link",
+				    dataUrl: ""
+				  }, function (res) {
+				    // 成功
+				    if (res.ret == 0) {
+				      alert(JSON.stringify('分享到【' + channel + '】成功！'));
+				    } else {
+				      alert(res.msg);
+				    }
+				  });
+
+				};
+        })
     </script>
 </body>
 </html>
